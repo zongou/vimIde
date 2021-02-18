@@ -263,4 +263,4 @@ tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
 重新打开vim,看看jdt.ls是否运行  
 </details>
 
-大功告成！到这里，一个简单的Java开发环境就搭建完成!你还可以[点这里](https://github.com/zongou/vim-ide/blob/master/vimJavaIdeOptimization_zh.md)看看我的优化和配置
+大功告成！到这里，一个简单的Java开发环境就搭建完成!你还可以[点这里](https://github.com/zongou/vimIde/blob/master/vimJavaIdeOptimization_zh.md)看看我的优化和配置
