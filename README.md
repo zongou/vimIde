@@ -1,5 +1,6 @@
 # vim-ide
   利用coc插件打造开发环境
+  [效果视频](https://b23.tv/5i9w0B)
 ### [Java IDE基础](https://github.com/zongou/vim-ide/blob/master/vimJavaIde_zh.md)  
 ### [Java IDE优化](https://github.com/zongou/vim-ide/blob/master/vimJavaIdeOptimization_zh.md)   
 ### 以下参考Java IDE
