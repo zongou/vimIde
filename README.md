@@ -1,7 +1,7 @@
 # vim-ide
   利用coc插件打造开发环境
-### [Java IDE基础](https://github.com/zongou/vim-ide/blob/master/vimJavaIDE_zh.md)  
-### [Java IDE优化](https://github.com/zongou/vim-ide/blob/master/vim-ideOptimization_zh.md)   
+### [Java IDE基础](https://github.com/zongou/vim-ide/blob/master/vimJavaIde_zh.md)  
+### [Java IDE优化](https://github.com/zongou/vim-ide/blob/master/vimJavaIdeOptimization_zh.md)   
 ### 以下参考Java IDE
 ### C/C++
   \# termux  
