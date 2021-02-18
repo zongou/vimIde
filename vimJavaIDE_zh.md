@@ -1,99 +1,77 @@
 
 ## 将会安装的软件以及插件
-    软件 : JDK vim nodejs npm git  
-    插件: plug coc
+- 软件 : JDK vim nodejs npm git  
+- 插件: plug coc
 <details markdown='1'><summary>依赖说明</summary>
 
-    plug依赖git  
-    coc依赖nodejs, npm  
+- plug依赖git  
+- coc依赖nodejs, npm  
 </details>
   
-## 配置JDK
-<details markdown='1'><summary>Termux安装提取自jvdroid的openjdk11</summary>
+## 安装JDK
+<details markdown='1'><summary>Termux安装openjdk11</summary>
 
-感谢[xiliuya](https://github.com/xiliuya/openjdk11-termux)提供的方法  
-[获取 JDK11 安装包](https://github.com/zongou/vimJavaIDE/blob/master/openjdk-11.0.1.tar.gz)  
-安装参考脚本:
+
+[获取 JDK11 安装包](https://github.com/zongou/packages/releases/tag/openjdk11.0.1)  
 > 
-    #将软件包放到termux根目录
-    cp ~/storage/shared/[你下载的jdk包] ~/
-    #创建软件目录
-    mkdir -p /data/data/com.termux/files/usr/share/jvm
-    #解压包
-    tar -xzvf ~/[你下载的jdk包] -C /data/data/com.termux/files/usr/share/jvm
-    #删除包
-    rm $HOME/openJDK-11.0.1.tar.gz
-    #创建一个脚本导入java软件源
-    cat << EOM | tee /data/data/com.termux/files/usr/etc/profile.d/jdk.sh
-    export JAVA_HOME=/data/data/com.termux/files/usr/share/jvm/openjdk-11.0.1
-    export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar
-    export PATH=\$JAVA_HOME/bin:\$PATH
-    export LD_LIBRARY_PATH=\$JAVA_HOME/lib/:\$JAVA_HOME/lib/jli/:\$JAVA_HOME/lib/server/
-    EOM
-    #重启termux
-    #查看JDK信息
-    java -version
+```shell
+#安装任一jdk
+dpkg -i [你的jdk包.deb]
+#重启termux
+#查看是否安装成功
+java -version
+```
+- 感谢[xiliuya](https://github.com/xiliuya/openjdk11-termux)提供的方法  
+- 感谢Lzhiyong编译的 [openjdk11](https://github.com/Lzhiyong/termux-ndk/releases/tag/openjdk)
+   
 </details>
-<details markdown='1'><summary>Termux安装Lzhiyong编译的openjdk11</summary>
 
-[获取 JDK11 安装包](https://github.com/Lzhiyong/termux-ndk/releases/tag/openjdk-11.0.1)  
-安装参考脚本:
->
-    #将软件包放到termux根目录
-    cp ~/storage/shared/[你下载的jdk包] ~/
-    #创建软件目录
-    mkdir -p /data/data/com.termux/files/usr/share/jvm
-    #解压包
-    tar -xJvf ~/[你下载的jdk包] -C /data/data/com.termux/files/usr/share/jvm
-    #删除包
-    rm $HOME/openJDK-11.0.1.tar.xz
-    #创建一个脚本导入java软件源
-    cat << EOM | tee /data/data/com.termux/files/usr/etc/profile.d/jdk.sh
-    export JAVA_HOME=/data/data/com.termux/files/usr/share/jvm/openjdk-11.0.1
-    export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar
-    export PATH=\$JAVA_HOME/bin:\$PATH
-    EOM
-    #重启termux
-    #查看JDK信息
-    java -version
-</details>
 <details markdown='1'><summary>debian安装JDK</summary>
 
-    sudo apt install openjdk-11-jdk-headless -y
+```shell
+sudo apt install openjdk-11-jdk-headless -y  
+```
 </details>
 
-## 安装 vim nodejs npm git
+## 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
-    #termux下nodejs已包含npm  
-    apt install vim nodejs git -y  
+```shell
+#termux下nodejs已包含npm  
+apt install vim nodejs git -y  
+```
 </details>
 <details markdown='1'><summary>debian 下: </summary>
 
-    apt install vim nodejs npm git -y 
+```shell
+apt install vim nodejs npm git -y 
+```
 </details>
 
 ## 配置 vim
 #### 配置[vim-plug](https://github.com/junegunn/vim-plug)管理器
 [下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)并放到.vim/autoload下  
-    
-    #创建~/.vim/autoload/文件夹
-    mkdir -p ~/.vim/autoload/
-    #复制plug.vim包到这个目录下
-    cp [plug.vim文件位置] ./vim/autoload
+```shell
+#创建~/.vim/autoload/文件夹
+mkdir -p ~/.vim/autoload/
+#复制plug.vim包到这个目录下
+cp [你的plug.vim] ~/.vim/autoload
 编写vim配置文件,配置plug和coc
-
-    vim ~/.vimrc
+```
+```shell
+vim ~/.vimrc
+```
 添加内容(可以在此将coc配置一并添加):
-
-    call plug#begin('~/.vim/plugged')
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    call plug#end()
+```vim
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+```
 保存,退出(按ESC,输入:wq)  
 运行vim,输入安装插件命令
-
-    :PlugInstall
-
+```vim
+:PlugInstall
+```
 #### 配置coc
 (coc是一个插件,也是一个包管理器平台)  
 添加coc配置到.vimrc中去,下面是来自[coc项目](https://github.com/neoclide/coc.nvim)的模版
@@ -257,29 +235,33 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 </details>
 
 重新进入vim,输入命令安装推荐java插件
-
-    :CocInstall coc-java coc-snippets  
+```vim
+:CocInstall coc-java coc-snippets  
+```
 <details markdown='1'><summary>插件说明</summary>
 
-    coc-java java自动补全
-    coc-snippets 自动补全代码块  
+- coc-java java自动补全
+- coc-snippets 自动补全代码块  
 </details>
-打开一个java文件, 就会自动下载jdt.ls(java语言服务器)
 
-    vim Demo.java
+打开一个java文件, 就会自动下载jdt.ls(java语言服务器)
+```shell
+vim Demo.java
+```
 如果下载太慢,可以手动配置
 <details markdown='1'><summary>手动配置jdt.ls</summary>
 
 下载jdtls包: [最新包](https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://download.eclipse.org/jdtls/snapshots/?d)
 
-创建原目录(如果有过下载jdt.ls的提示的话目录已经有了)
 
-    mkdir -p ~/.config/coc/extensions/coc-java-data/server/
-将jdt.ls的包解压到这个目录下
-
-    tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
+```shell
+#创建原目录
+mkdir -p ~/.config/coc/extensions/coc-java-data/server/
+#将jdt.ls的包解压到这个目录下  
+tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
+```
 重新打开vim,看看jdt.ls是否运行  
 大功告成!
 </details>
 
-你还可以[点这里](https://github.com/zongou/vimJavaIDE/blob/master/vimJavaIDEOptimization_zh.md)看看vim的优化建议
+你还可以[点这里](https://github.com/zongou/vim-ide/blob/master/vimJavaIDEOptimization_zh.md)看看vim的优化建议

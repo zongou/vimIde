@@ -1,10 +1,39 @@
-# vimJavaIDE
-
-#### set up termux with vim as java IDE
-#### vim + jdk 打造java 开发环境
-
-[manual in english](https://github.com/zongou/vimJavaIDE/blob/master/vimJavaIDE.md)  
-[中文手册](https://github.com/zongou/vimJavaIDE/blob/master/vimJavaIDE_zh.md)  
-[优化建议](https://github.com/zongou/vimJavaIDE/blob/master/vimJavaIDEOptimization_zh.md)   
-[配置其他IDE](https://github.com/zongou/vimJavaIDE/blob/master/otherIDE.md)
-
+# vim-ide
+  利用coc插件打造开发环境
+### [Java IDE基础](https://github.com/zongou/vim-ide/blob/master/vim-ide_zh.md)  
+### [Java IDE优化](https://github.com/zongou/vim-ide/blob/master/vim-ideOptimization_zh.md)   
+### 以下参考Java IDE
+### C/C++
+  \# termux  
+  apt install clang  
+  \# vim  
+  :CocInstall coc-clangd  
+### python
+  \# termux  
+  apt install python  
+  pip install jedi  
+  \# vim  
+  :CocInstall coc-python  
+### go-lang
+  \# termux  
+  apt install golang  
+  \# vim  
+  :CocInstall coc-go  
+### web
+  \# termux  
+  npm install typescript  
+  \# vim  
+  :CocInstall coc-tsserver  
+### mysql
+  \# termux  
+  apt install mariadb  
+  \# vim  
+  :CocInstall coc-sql  
+### bash
+  \# vim  
+  :CocInstall coc-sh  
+### vimscript
+  \# vim  
+  :CocInstall coc-vimlsp  
+### 其他
+  其他还有很多，就不一一列举了，你可以在[这个页面](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)寻找你想要的coc插件  
