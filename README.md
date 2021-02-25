@@ -13,6 +13,8 @@
   \# termux  
   apt install python  
   pip install jedi  
+  \# alibaba agent  
+  pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/  
   \# vim  
   :CocInstall coc-python  
 ### go-lang
