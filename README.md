@@ -24,6 +24,7 @@
   :CocInstall coc-go  
 ### web
   \# termux  
+  \# add -g option to install to system  
   npm install typescript  
   \# vim  
   :CocInstall coc-tsserver  
