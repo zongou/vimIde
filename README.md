@@ -32,8 +32,6 @@ mkdir -p ~/.vim/autoload/
 #复制plug.vim包到这个目录下
 cp [你的plug.vim] ~/.vim/autoload
 编写vim配置文件,配置plug和coc
-```
-```shell
 vim ~/.vimrc
 ```
 plug添加coc
