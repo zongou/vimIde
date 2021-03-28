@@ -2,8 +2,7 @@
   利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
-## 配置vim+plug+coc基础环境
-
+# 配置vim+plug+coc基础环境
 #### 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
@@ -25,7 +24,7 @@ apt install vim nodejs npm git -y
 - coc依赖nodejs, npm  
 </details>
 
-### 配置 vim
+#### 配置 vim
 #### 配置[vim-plug](https://github.com/junegunn/vim-plug)管理器
 [下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)并放到.vim/autoload下  
 ```shell
