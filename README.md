@@ -204,7 +204,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ```
 </details>  
-到这里，一个简单的vim开发环境就搭建完成!
+到这里，基础的开发环境就搭建完成!
 
 下面是为各种语言配置
 
