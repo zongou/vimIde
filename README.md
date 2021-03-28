@@ -31,7 +31,7 @@ apt install vim nodejs npm git -y
 mkdir -p ~/.vim/autoload/
 #复制plug.vim包到这个目录下
 cp [你的plug.vim] ~/.vim/autoload
-编写vim配置文件,配置plug和coc
+# 编写vim配置文件,配置plug和coc
 vim ~/.vimrc
 ```
 plug添加coc
