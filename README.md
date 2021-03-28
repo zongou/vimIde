@@ -209,8 +209,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ```
-</details>
-
+</details>  
+大功告成！到这里，一个简单的vim开发环境就搭建完成!
 
 ## java
 #### 安装JDK
