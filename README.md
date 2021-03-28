@@ -1,5 +1,4 @@
-# vim-IDE
-  利用coc插件打造开发环境
+# vim-IDE 利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
 ## vim + plug + coc
