@@ -2,19 +2,9 @@
   利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
-### 配置vim+plug+coc基础环境
+## 配置vim+plug+coc基础环境
 
-## 将会安装的软件以及插件
-- 软件: vim nodejs npm git  
-- 插件: plug coc
-<details markdown='1'><summary>依赖说明</summary>
-
-- plug依赖git  
-- coc依赖nodejs, npm  
-</details>
-  
-
-## 安装 vim 和依赖
+#### 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
 ```shell
@@ -29,7 +19,13 @@ apt install vim nodejs npm git -y
 ```
 </details>
 
-## 配置 vim
+<details markdown='1'><summary>依赖说明</summary>
+
+- plug依赖git  
+- coc依赖nodejs, npm  
+</details>
+
+### 配置 vim
 #### 配置[vim-plug](https://github.com/junegunn/vim-plug)管理器
 [下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)并放到.vim/autoload下  
 ```shell
@@ -216,17 +212,71 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 </details>
 
 
+## java
+#### 安装JDK
+<details markdown='1'><summary>Termux安装openjdk11</summary>
 
 
-### [Java IDE基础](https://github.com/zongou/vimIde/blob/master/vimJavaIde_zh.md)  
-### [Java IDE优化](https://github.com/zongou/vimIde/blob/master/vimJavaIdeOptimization_zh.md)   
-### 以下参考Java IDE
-### C/C++
+[获取 JDK11 安装包](https://github.com/zongou/packages/releases/tag/openjdk11.0.1)  
+> 
+```shell
+#安装任一jdk
+dpkg -i [你的jdk包.deb]
+#重启termux
+#查看是否安装成功
+java -version
+```
+- 感谢[xiliuya](https://github.com/xiliuya/openjdk11-termux)提供的方法  
+- 感谢Lzhiyong编译的 [openjdk11](https://github.com/Lzhiyong/termux-ndk/releases/tag/openjdk)
+   
+</details>
+
+<details markdown='1'><summary>debian安装JDK</summary>
+
+```shell
+sudo apt install openjdk-11-jdk-headless -y  
+```
+</details>
+
+
+重新进入vim,输入命令安装推荐java插件
+```vim
+:CocInstall coc-java coc-snippets  
+```
+<details markdown='1'><summary>插件说明</summary>
+
+- coc-java java自动补全
+- coc-snippets 自动补全代码块  
+</details>
+
+打开一个java文件, 就会自动下载jdt.ls(java语言服务器)
+```shell
+vim Demo.java
+```
+如果下载太慢,可以手动配置
+<details markdown='1'><summary>手动配置jdt.ls</summary>
+
+下载jdtls包:     
+官方: [最新包](https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://download.eclipse.org/jdtls/snapshots/?d)  
+清华源代理: [最新包](https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/)
+
+
+```shell
+#创建原目录
+mkdir -p ~/.config/coc/extensions/coc-java-data/server/
+#将jdt.ls的包解压到这个目录下  
+tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
+```
+重新打开vim,看看jdt.ls是否运行  
+</details>
+
+大功告成！到这里，一个简单的Java开发环境就搭建完成!你还可以[点这里](https://github.com/zongou/vimIde/blob/master/vimJavaIdeOptimization_zh.md)看看我的优化和配置  
+## C/C++
   \# termux  
   apt install clang  
   \# vim  
   :CocInstall coc-clangd  
-### python
+## python
   \# termux  
   apt install python  
   pip install jedi  
@@ -234,27 +284,27 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
   pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/  
   \# vim  
   :CocInstall coc-python  
-### go-lang
+## go-lang
   \# termux  
   apt install golang  
   \# vim  
   :CocInstall coc-go  
-### web
+## web
   \# termux  
   \# add -g option to install to system  
   npm install typescript  
   \# vim  
   :CocInstall coc-tsserver  
-### mysql
+## mysql
   \# termux  
   apt install mariadb  
   \# vim  
   :CocInstall coc-sql  
-### bash
+## bash
   \# vim  
   :CocInstall coc-sh  
-### vimscript
+## vimscript
   \# vim  
   :CocInstall coc-vimlsp  
-### 其他
+## 其他
   其他还有很多，就不一一列举了，你可以在[这个页面](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)寻找你想要的coc插件  
