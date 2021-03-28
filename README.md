@@ -294,7 +294,7 @@ tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
   \# add -g option to install to system  
   npm install typescript  
   \# vim  
-  :CocInstall coc-tsserver  
+  :CocInstall coc-tsserver coc-html coc-css
 ## mysql
   \# termux  
   apt install mariadb  
