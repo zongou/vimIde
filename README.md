@@ -2,7 +2,7 @@
   利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
-# 配置vim+plug+coc基础环境
+## 配置vim+plug+coc基础环境
 #### 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
@@ -211,7 +211,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 </details>  
 大功告成！到这里，一个简单的vim开发环境就搭建完成!
 
-# Java
+## Java
 #### 安装JDK
 <details markdown='1'><summary>Termux安装openjdk11</summary>
 
@@ -270,12 +270,12 @@ tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
 </details>
 
 大功告成！到这里，一个简单的Java开发环境就搭建完成!你还可以[点这里](https://github.com/zongou/vimIde/blob/master/vimJavaIdeOptimization_zh.md)看看我的优化和配置  
-# C/C++
+## C/C++
     # termux  
     apt install clang  
     # vim  
     :CocInstall coc-clangd  
-# python
+## python
     # termux  
     apt install python  
     pip install jedi  
@@ -283,27 +283,27 @@ tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/  
     # vim  
     :CocInstall coc-python  
-# go-lang
+## go-lang
     # termux  
     apt install golang  
     # vim  
     :CocInstall coc-go  
-# web
+## web
     # termux  
     # add -g option to install to system  
     npm install typescript  
     # vim  
     :CocInstall coc-html coc-emmet coc-tsserver coc-css
-# mysql
+## mysql
     # termux  
     apt install mariadb  
     # vim  
     :CocInstall coc-sql  
-# bash
+## bash
     # vim  
     :CocInstall coc-sh  
-# vimscript
+## vimscript
     # vim  
     :CocInstall coc-vimlsp  
-# 其他
+## 其他
   其他还有很多，就不一一列举了，你可以在[这个页面](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)寻找你想要的coc插件  
