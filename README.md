@@ -217,7 +217,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 > 
 ```shell
 #安装任一jdk
-dpkg -i [你的jdk包.deb]
+dpkg -i [jdk安装包.deb]
 #重启termux
 #查看是否安装成功
 java -version
