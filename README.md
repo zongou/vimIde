@@ -2,7 +2,7 @@
   利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
-## vim+plug+coc
+## vim + plug + coc
 #### 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
@@ -25,7 +25,7 @@ apt install vim nodejs npm git -y
 </details>
 
 #### 配置[vim-plug](https://github.com/junegunn/vim-plug)管理器
-[下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)并放到.vim/autoload下  
+[下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)（用手动下载, git, 或wget等等），并放到.vim/autoload下  
 ```shell
 #创建~/.vim/autoload/文件夹
 mkdir -p ~/.vim/autoload/
@@ -36,17 +36,15 @@ cp [你的plug.vim] ~/.vim/autoload
 ```shell
 vim ~/.vimrc
 ```
-添加内容(可以在此将coc配置一并添加):
+plug添加coc
 ```vim
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 ```
-保存,退出(按ESC,输入:wq)  
-运行vim,输入安装插件命令
-```vim
-:PlugInstall
-```
+保存(按ESC,输入:w)  
+刷新vimrc(按ESC,输入:so ~/.vimrc)  
+安装插件coc(按ESC,输入:PlugInstall)
 #### 配置coc
 (coc是一个插件,也是一个包管理器平台)  
 添加coc配置到.vimrc中去,下面是来自[coc项目](https://github.com/neoclide/coc.nvim)的模版
@@ -209,6 +207,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ```
 </details>  
 大功告成！到这里，一个简单的vim开发环境就搭建完成!
+
+下面是为各种语言配置
 
 ## Java
 #### 安装JDK
