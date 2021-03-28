@@ -251,7 +251,9 @@ vim Demo.java
 如果下载太慢,可以手动配置
 <details markdown='1'><summary>手动配置jdt.ls</summary>
 
-下载jdtls包: [最新包](https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://download.eclipse.org/jdtls/snapshots/?d)
+下载jdtls包:     
+官方: [最新包](https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://download.eclipse.org/jdtls/snapshots/?d)  
+清华源代理: [最新包](https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/snapshots/jdt-language-server-latest.tar.gz) [包在线目录](https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/)
 
 
 ```shell
