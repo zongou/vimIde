@@ -2,7 +2,7 @@
   利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
-## 配置vim+plug+coc基础环境
+## vim+plug+coc基础环境
 #### 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
 
