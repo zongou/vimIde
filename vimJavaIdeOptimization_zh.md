@@ -8,13 +8,38 @@
 
 ```vim
 "" vimrc configuration
+"================================================
+"" Plugings
+"================================================
+call plug#begin('~/.vim/plugged')
+
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+Plug 'yggdroot/indentline'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'honza/vim-snippets'
+Plug 'zongou/JavaRun'
+" Plug 'wsdjeg/JavaUnit.vim'
+" Plug 'puremourning/vimspector'
+
+call plug#end()
+filetype on
+filetype plugin on
+filetype plugin indent on
 
 "================================================
 "" General settings
 "================================================
 
 "------ Meta ------"
-
 " clear all autocommands! (this comment must be on its own line)
 autocmd!
 
@@ -24,7 +49,6 @@ set viminfo=                    " don't use or save viminfo files
 source $VIMRUNTIME/defaults.vim		" Get the defaults that most users want
 
 "------ Console UI & Text display ------"
-
 set cmdheight=1                 " explicitly set the height of the command line
 set showcmd                     " Show (partial) command in status line.
 set number                      " yay line numbers
@@ -42,7 +66,6 @@ set wildmenu                    " turn on wild menu :e <Tab>
 set wildmode=list:longest       " set wildmenu to list choice
 
 "------ Text editing and searching behavior ------"
-
 set clipboard=unnamed	" yank to the system register (*) by default
 set nohlsearch                  " turn off highlighting for searched expressions
 set incsearch                   " highlight as we search however
@@ -63,7 +86,6 @@ set formatoptions=tcrql         " t - autowrap to textwidth
                                 " l - don't format already long lines
 
 "------ Indents and tabs ------"
-
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
@@ -76,13 +98,19 @@ set preserveindent              " save as much indent structure as possible
 filetype plugin indent on       " load filetype plugins and indent settings
 
 "------ History,backup and swapfile ------"
-
 set confirm                     " prompt to save when modified
 set history=1000
 set nobackup
 set noswapfile
 set autoread		" auto read when file is changed from outside
 
+"------ netrw ------"
+" let g:netrw_sort_by = 'time'
+" let g:netrw_sort_direction = 'reverse'
+let g:netrw_browse_split = 4
+" let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+" let g:netrw_winsize = 25
 
 "------ general key bindings ------"
 " select all
@@ -154,52 +182,40 @@ func! Rungdb()
     exec "!g++ % -g -o %<"
     exec "!gdb ./%<"
 endfunc
- 
-"================================================
-"" Plugings
-"================================================
-call plug#begin('~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
-Plug 'yggdroot/indentline'
-Plug 'preservim/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
-" Plug 'honza/vim-snippets'
-Plug 'zongou/JavaRun'
-" Plug 'wsdjeg/JavaUnit.vim'
-" Plug 'puremourning/vimspector'
-
-call plug#end()
-filetype on
-filetype plugin on
-filetype plugin indent on
 
 "================================================
 " Plugin settings
 "================================================
 "------ lightline settings ------"
-" https://github.com/itchyny/lightline.vim/blob/master/doc/lightline.txt
 set laststatus=2
 if !has('gui_running')
     set t_Co=8
 endif
 set noshowmode
-"Currently, wombat, solarized, powerline, powerlineish,
-"jellybeans, molokai, seoul256, darcula,
-"selenized_dark, selenized_black, selenized_light, selenized_white,
-"Tomorrow, Tomorrow_Night, Tomorrow_Night_Blue,
-"Tomorrow_Night_Bright, Tomorrow_Night_Eighties, PaperColor,
-"landscape, one, materia, material, OldHope, nord, deus,
-"simpleblack, srcery_drk, ayu_mirage, ayu_light, ayu_dark and
-"16color are available.
+
 let g:lightline = {
       \ 'colorscheme': 'default',
-      \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ] ]
+      \ 'component_function': {
+      \   'fileformat': 'LightlineFileformat',
+      \   'fileencoding': 'LightLineFileencoding',
+      \   'filetype': 'LightlineFiletype',
+      \ },
       \ }
-      \ }
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFileencoding() 
+    if empty(get(g:, 'coc_status', '')) && empty(get(b:, 'coc_diagnostic_info', {})) 
+        return winwidth(0) < 70 ? &fileformat : &fileencoding
+    endif
+    return trim(coc#status())
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
 
 "------ commenter ------"
 let mapleader=","
