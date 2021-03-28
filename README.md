@@ -212,7 +212,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 </details>  
 大功告成！到这里，一个简单的vim开发环境就搭建完成!
 
-## java
+## Java
 #### 安装JDK
 <details markdown='1'><summary>Termux安装openjdk11</summary>
 
