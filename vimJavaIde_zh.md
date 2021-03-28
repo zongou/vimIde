@@ -1,6 +1,6 @@
-
+## 配置vim+plug+coc基础环境
 ## 将会安装的软件以及插件
-- 软件 : JDK vim nodejs npm git  
+- 软件: vim nodejs npm git  
 - 插件: plug coc
 <details markdown='1'><summary>依赖说明</summary>
 
@@ -8,30 +8,6 @@
 - coc依赖nodejs, npm  
 </details>
   
-## 安装JDK
-<details markdown='1'><summary>Termux安装openjdk11</summary>
-
-
-[获取 JDK11 安装包](https://github.com/zongou/packages/releases/tag/openjdk11.0.1)  
-> 
-```shell
-#安装任一jdk
-dpkg -i [你的jdk包.deb]
-#重启termux
-#查看是否安装成功
-java -version
-```
-- 感谢[xiliuya](https://github.com/xiliuya/openjdk11-termux)提供的方法  
-- 感谢Lzhiyong编译的 [openjdk11](https://github.com/Lzhiyong/termux-ndk/releases/tag/openjdk)
-   
-</details>
-
-<details markdown='1'><summary>debian安装JDK</summary>
-
-```shell
-sudo apt install openjdk-11-jdk-headless -y  
-```
-</details>
 
 ## 安装 vim 和依赖
 <details markdown='1'><summary>Termux 下: </summary>
@@ -233,6 +209,32 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ```
 </details>
+
+## 安装JDK
+<details markdown='1'><summary>Termux安装openjdk11</summary>
+
+
+[获取 JDK11 安装包](https://github.com/zongou/packages/releases/tag/openjdk11.0.1)  
+> 
+```shell
+#安装任一jdk
+dpkg -i [你的jdk包.deb]
+#重启termux
+#查看是否安装成功
+java -version
+```
+- 感谢[xiliuya](https://github.com/xiliuya/openjdk11-termux)提供的方法  
+- 感谢Lzhiyong编译的 [openjdk11](https://github.com/Lzhiyong/termux-ndk/releases/tag/openjdk)
+   
+</details>
+
+<details markdown='1'><summary>debian安装JDK</summary>
+
+```shell
+sudo apt install openjdk-11-jdk-headless -y  
+```
+</details>
+
 
 重新进入vim,输入命令安装推荐java插件
 ```vim
