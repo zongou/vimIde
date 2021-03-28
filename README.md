@@ -1,5 +1,4 @@
-# vim-IDE
-  利用coc插件打造开发环境
+# vim-IDE -- 利用coc插件打造开发环境
   [效果视频](https://b23.tv/5i9w0B)
   
 ## vim + plug + coc
@@ -206,7 +205,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ```
 </details>  
-大功告成！到这里，一个简单的vim开发环境就搭建完成!
+到这里，一个简单的vim开发环境就搭建完成!
 
 下面是为各种语言配置
 
