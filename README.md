@@ -24,7 +24,6 @@ apt install vim nodejs npm git -y
 - coc依赖nodejs, npm  
 </details>
 
-#### 配置 vim
 #### 配置[vim-plug](https://github.com/junegunn/vim-plug)管理器
 [下载plug.vim文件](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)并放到.vim/autoload下  
 ```shell
