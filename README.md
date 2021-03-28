@@ -272,39 +272,39 @@ tar -xzvf [jdt.ls的包] -C ~/.config/coc/extensions/coc-java-data/server/
 
 大功告成！到这里，一个简单的Java开发环境就搭建完成!你还可以[点这里](https://github.com/zongou/vimIde/blob/master/vimJavaIdeOptimization_zh.md)看看我的优化和配置  
 ## C/C++
-  \# termux  
-  apt install clang  
-  \# vim  
-  :CocInstall coc-clangd  
+    # termux  
+    apt install clang  
+    # vim  
+    :CocInstall coc-clangd  
 ## python
-  \# termux  
-  apt install python  
-  pip install jedi  
-  \# alibaba agent  
-  pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/  
-  \# vim  
-  :CocInstall coc-python  
+    # termux  
+    apt install python  
+    pip install jedi  
+    # alibaba agent  
+    pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/  
+    # vim  
+    :CocInstall coc-python  
 ## go-lang
-  \# termux  
-  apt install golang  
-  \# vim  
-  :CocInstall coc-go  
+    # termux  
+    apt install golang  
+    # vim  
+    :CocInstall coc-go  
 ## web
-  \# termux  
-  \# add -g option to install to system  
-  npm install typescript  
-  \# vim  
-  :CocInstall coc-html coc-emmet coc-tsserver coc-css
+    # termux  
+    # add -g option to install to system  
+    npm install typescript  
+    # vim  
+    :CocInstall coc-html coc-emmet coc-tsserver coc-css
 ## mysql
-  \# termux  
-  apt install mariadb  
-  \# vim  
-  :CocInstall coc-sql  
+    # termux  
+    apt install mariadb  
+    # vim  
+    :CocInstall coc-sql  
 ## bash
-  \# vim  
-  :CocInstall coc-sh  
+    # vim  
+    :CocInstall coc-sh  
 ## vimscript
-  \# vim  
-  :CocInstall coc-vimlsp  
+    # vim  
+    :CocInstall coc-vimlsp  
 ## 其他
   其他还有很多，就不一一列举了，你可以在[这个页面](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)寻找你想要的coc插件  
